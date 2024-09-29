@@ -1,24 +1,14 @@
-.marquee-container {
-          width: 100%;
-          overflow: hidden;
-        }
-        
-        .marquee-content {
-          display: inline-block;
-          white-space: nowrap;
-          animation: marquee 20s linear infinite;
-        }
-        
-        @keyframes marquee {
-          0% {
-            transform: translateX(0%);
-          }
-          100% {
-            transform: translateX(-50%);
-          }
-        }
-        
-        // Pause animation on hover
-        .marquee-container:hover .marquee-content {
-          animation-play-state: paused;
-        }
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.animate-marquee {
+  display: flex;
+  gap: 3rem; /* Adjust the gap between images as needed */
+  animation: marquee 20s linear infinite;
+}

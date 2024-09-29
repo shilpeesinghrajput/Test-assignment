@@ -13,19 +13,22 @@ const Layout = () => {
   return (
     <div className="min-h-screen flex flex-col">
       <Header />
-      <heading className="flex-grow ml-[90px]">
-        <Hero />
-        </heading>
+      <div className="flex-grow">
+        <section className="px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+          <Hero />
+        </section>
         <Clients />
-        <main className="flex-grow ml-[90px]">
-        <Expertise />
-        <Stats />
-        <Testimonial />
-        <FAQ/>
-        
-      </main>
+        <main className="px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+          <Expertise />
+          <Stats />
+          <Testimonial />
+          <FAQ />
+        </main>
+      </div>
+      <div className='px-4 sm:px-6 lg:px-8 '>
       <Contact />
       <Footer />
+      </div>
     </div>
   );
 };

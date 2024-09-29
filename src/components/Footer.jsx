@@ -3,63 +3,43 @@ import './Footer.scss';
 
 const Footer = () => {
   return (
-    <footer className="bg-black text-white py-8">
-      <div className="marquee-container overflow-hidden">
-        <div className="marquee-content flex whitespace-nowrap animate-marquee">
-          <span className="mx-4">UNLEASH VISUAL IMPACT</span>
-          <span className="mx-4">|</span>
-          <span className="mx-4">UNLEASH VISUAL IMPACT</span>
-          <span className="mx-4">|</span>
-          <span className="mx-4">UNLEASH VISUAL IMPACT</span>
-          <span className="mx-4">|</span>
+    <footer className="text-black bg-transparent">
+      {/* Marquee Section */}
+      <div className="marquee-container bg-black text-white py-4 sm:py-6 md:py-10 overflow-hidden">
+        <div className="marquee-content text-2xl sm:text-3xl md:text-5xl lg:text-[68px] font-medium flex whitespace-nowrap animate-marquee">
+          <span className="mx-1 sm:mx-2">UNLEASH VISUAL IMPACT</span>
+          <span className="mx-1 sm:mx-2">|</span>
+          <span className="mx-1 sm:mx-2">UNLEASH VISUAL IMPACT</span>
+          <span className="mx-1 sm:mx-2">|</span>
+          <span className="mx-1 sm:mx-2">UNLEASH VISUAL IMPACT</span>
+          <span className="mx-1 sm:mx-2">|</span>
         </div>
       </div>
-      
-      <div className="container mx-auto px-4 mt-8">
-        <div className="grid grid-cols-5 gap-4">
-          <div>
-            <h3 className="font-bold mb-2">COMPANY</h3>
-            <ul>
-              <li><a href="#" className="hover:text-gray-300">Who we are</a></li>
-            </ul>
-          </div>
-          <div>
-            <h3 className="font-bold mb-2">RESOURCES</h3>
-            <ul>
-              <li><a href="#" className="hover:text-gray-300">Blog</a></li>
-            </ul>
-          </div>
-          <div>
-            <h3 className="font-bold mb-2">WORK</h3>
-            <ul>
-              <li><a href="#" className="hover:text-gray-300">Video</a></li>
-              <li><a href="#" className="hover:text-gray-300">Event</a></li>
-              <li><a href="#" className="hover:text-gray-300">Print</a></li>
-            </ul>
-          </div>
-          <div>
-            <h3 className="font-bold mb-2">SERVICES</h3>
-            <ul>
-              <li><a href="#" className="hover:text-gray-300">Video</a></li>
-              <li><a href="#" className="hover:text-gray-300">Event</a></li>
-              <li><a href="#" className="hover:text-gray-300">Print</a></li>
-            </ul>
-          </div>
-          <div>
-            <h3 className="font-bold mb-2">CONTACT</h3>
-            <ul>
-              <li><a href="#" className="hover:text-gray-300">Talk to us</a></li>
-              <li><a href="#" className="hover:text-gray-300">Career</a></li>
-            </ul>
-          </div>
+
+      {/* Main Footer Content */}
+      <div className="container mx-auto px-4 mt-6 sm:mt-8">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4 md:gap-6 bg-white">
+          {['COMPANY', 'RESOURCES', 'WORK', 'SERVICES', 'CONTACT'].map((title, index) => (
+            <div key={index} className="mb-4 sm:mb-6">
+              <h3 className="font-medium text-base sm:text-lg md:text-xl text-[#111010] mb-2">{title}</h3>
+              <ul className="space-y-1">
+                {['Who we are', 'Blog', 'Video', 'Event', 'Print', 'Talk to us', 'Career'].slice(0, 3).map((item, idx) => (
+                  <li key={idx}>
+                    <a href="#" className="hover:text-gray-600 text-xs sm:text-sm md:text-base">{item}</a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
         </div>
-        
-        <div className="mt-8 pt-4 border-t border-gray-700 flex justify-between items-center text-sm">
-          <p>Copyright © 2023 Red Barrels</p>
-          <div>
-            <a href="#" className="mr-4 hover:text-gray-300">Privacy Policy</a>
-            <a href="#" className="mr-4 hover:text-gray-300">Legal</a>
-            <a href="#" className="hover:text-gray-300">Terms & Conditions</a>
+
+        {/* Footer Bottom Section */}
+        <div className="mt-6 sm:mt-8 pt-4 border-t border-gray-300 flex flex-col sm:flex-row justify-between items-center text-xs sm:text-sm">
+          <p className="mb-4 sm:mb-0">Copyright © 2023 Red Barrels</p>
+          <div className="space-x-4">
+            <a href="#" className="hover:text-gray-600">Privacy Policy</a>
+            <a href="#" className="hover:text-gray-600">Legal</a>
+            <a href="#" className="hover:text-gray-600">Terms & Conditions</a>
           </div>
         </div>
       </div>

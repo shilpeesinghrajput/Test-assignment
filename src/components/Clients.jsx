@@ -9,7 +9,6 @@ import My from '../asserts/images/My.svg';
 import './Clients.scss'
 
 const Clients = () => {
-  // Update the array to pair client names with their corresponding images
   const clients = [
     { name: 'Layer', image: Layer },
     { name: 'Ikea', image: Ikea },
@@ -21,24 +20,15 @@ const Clients = () => {
   ];
 
   return (
-    <section className="bg-white mt-[120px] overflow-hidden">
-      <div className="w-full overflow-hidden relative">
-      <div className="flex items-center gap-12 animate-marquee whitespace-nowrap">
-          {clients.map((client, index) => (
+    <section className="bg-white mt-8 sm:mt-12 md:mt-16 lg:mt-20 overflow-hidden">
+      <div className="w-full overflow-hidden relative py-4 sm:py-6">
+        <div className="flex items-center gap-8 sm:gap-12 animate-marquee whitespace-nowrap">
+          {clients.concat(clients).map((client, index) => (
             <img
               key={index}
               src={client.image}
               alt={client.name}
-              className="h-[26px]"
-            />
-          ))}
-          {/* Duplicate the list for smooth looping effect */}
-          {clients.map((client, index) => (
-            <img
-              key={`duplicate-${index}`}
-              src={client.image}
-              alt={client.name}
-              className="h-[26px]"
+              className="h-4 sm:h-5 md:h-6 lg:h-[26px] w-auto"
             />
           ))}
         </div>

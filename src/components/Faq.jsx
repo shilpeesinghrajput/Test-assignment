@@ -31,17 +31,17 @@ const FAQ = () => {
   ];
 
   return (
-    <section className="bg-white py-20">
+    <section className="bg-white py-10 md:py-20">
       <div className="container mx-auto px-4">
-      <div className="flex flex-wrap ">
-      <div className="w-full lg:w-1/2 lg:mb-0">
-        <h2 className="text-3xl font-bold mb-8">Frequently asked questions</h2>
-        </div>
-        <div className="max-w-3xl gap-4">
-          {faqs.map((faq, index) => (
-            <FAQItem key={index} question={faq.question} answer={faq.answer} />
-          ))}
-        </div>
+        <div className="flex flex-wrap">
+          <div className="w-full lg:w-1/2 lg:mb-0">
+            <h2 className="text-3xl md:text-[52px] font-[500] text-[#111010] mb-4 md:mb-8">Frequently asked questions</h2>
+          </div>
+          <div className="w-full lg:max-w-3xl gap-4">
+            {faqs.map((faq, index) => (
+              <FAQItem key={index} question={faq.question} answer={faq.answer} />
+            ))}
+          </div>
         </div>
       </div>
     </section>
